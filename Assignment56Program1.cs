@@ -1,0 +1,70 @@
+/*
+Write C Sharp program which accept String from user and display
+below pattern.
+Input : Hello
+Output : 
+         H   *   *   *   *
+		 H   e   *   *   *
+		 H   e   l   *   *
+		 H   e   l   l   *
+
+		 00 01  02  03  04
+		 10 11  12  13  14
+		 20 21  22  23  24
+		 30 31  32  33  34
+*/
+
+using System;
+
+class StringPattern
+{
+ public void Display(string str)
+ {
+  int i=0;
+  int iSize=str.Length;
+  char[] arr=new char[iSize];
+  arr=str.ToCharArray();
+  //int ColCounter=1;
+  for (i=0;i<iSize-1;i++)
+  {
+   for(int j=0;j<iSize;j++)
+   {
+	if ((i==j)||(i>j))
+	{
+	 Console.Write(arr[j]+"  ");
+	}
+	else //if (j>i)
+	{
+	 Console.Write("*  ");
+	}
+   }
+   //ColCounter++;
+   Console.WriteLine();
+  }
+  /*
+  for (i=0;i<iSize-1;i++)
+  {
+   for(int j=0;j<iSize;j++)
+   {
+	if (j>i)
+	{
+	 Console.Write("*  ");
+	}
+   }
+   Console.WriteLine();
+  }
+  */
+ }
+}; //End of class
+
+public static class Assignment56Program1
+{
+ public static void Main(string[] arg)
+ {
+  string sInput;
+  StringPattern sobj=new StringPattern();
+  Console.WriteLine("Enter a String:: ");
+  sInput=Console.ReadLine();
+  sobj.Display(sInput);
+ }
+};//End of class
